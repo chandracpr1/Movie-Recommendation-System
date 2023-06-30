@@ -8,6 +8,10 @@ from PIL import Image
 
 
 # new_df = pickle.load(open('movies.pkl' ,'rb'))/
+import zipfile
+with zipfile.ZipFile('similarity.zip', 'r') as zip_ref:
+    zip_ref.extractall()
+
 new_df = pd.read_pickle(open('movies.pkl' ,'rb'))
 movies_list=new_df['title'].values
 similarity =pd.read_pickle(open('similarity.pkl','rb'))
