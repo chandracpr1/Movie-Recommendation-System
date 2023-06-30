@@ -10,7 +10,7 @@ from PIL import Image
 # new_df = pickle.load(open('movies.pkl' ,'rb'))/
 new_df = pd.read_pickle(open('movies.pkl' ,'rb'))
 movies_list=new_df['title'].values
-similarity =pickle.load(open('similarity.pkl','rb'))
+similarity =pd.read_pickle(open('similarity.pkl','rb'))
 
 def fetch_poster(movie_id):
     response=requests.get('http://api.themoviedb.org/3/movie/{}?api_key=dbdec17250350e80933c018ea7d6eaaf&language=en-US'.format(movie_id))
