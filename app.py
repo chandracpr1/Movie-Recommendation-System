@@ -39,13 +39,13 @@ def recommend(movie):
 st.title(":red[Movie Recommendation Web Interface]")
 image=Image.open('image1.png')
 st.sidebar.image(image)
-st.sidebar.write("This web app recommends similar movies based on the selected movies")
+st.sidebar.write(":red[This web app recommends similar movies based on the selected movies]")
 
 selected_movie_name = st.selectbox(
     ':red[Select any movie to find similar movies ]',
     movies_list)
 
-st.write('Your selection:', selected_movie_name)
+st.write('You have selected  :', selected_movie_name)
 
 if st.button('Recommend'):
     names , posters=recommend(selected_movie_name)
